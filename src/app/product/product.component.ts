@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../Objectes/Product";
 import {ProductService} from "../services/product.service";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-product',
@@ -10,10 +11,14 @@ import {ProductService} from "../services/product.service";
 export class ProductComponent implements OnInit {
 
   public products: Product[];
+  public searchText: FormControl = new FormControl();
+  public keword: string;
+  public imgUrl = 'http://placehold.it/320x150'
 
-  private imgUrl = 'http://placehold.it/320x150'
-
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+    this.searchText.valueChanges
+    .subscribe(val => this.keword = val);
+  }
 
   ngOnInit() {
     this.products = this.productService.getProducts();

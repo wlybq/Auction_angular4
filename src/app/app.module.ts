@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import {RouterModule, Routes} from "@angular/router";
 import {ProductService} from "./services/product.service";
+import { SearchPipe } from './pipe/search.pipe';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const routConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -28,11 +30,14 @@ const routConfig: Routes = [
     StarsComponent,
     ProductComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routConfig)
+    FormsModule,
+    RouterModule.forRoot(routConfig),
+    ReactiveFormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
