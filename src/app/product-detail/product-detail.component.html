@@ -8,13 +8,32 @@
 </div>
 
 <div class="well">
+  <div class="row">
+    <div [hidden]="showItem" class="col-md-12">
+      <button class="btn btn-primary" (click)="showItem = true">我要评论</button>
+    </div>
+    <div [hidden]="!showItem" class="col-md-12">
+      <div class="form-group">
+        <textarea class="form-control" rows="3" placeholder="说点什么..." [(ngModel)]="commentText"></textarea>
+      </div>
+      <div class="pull-left">
+        评价星级：
+        <app-stars [(rating)]="newRating" [onChange]="false"></app-stars>
+      </div>
+      <div class="pull-right">
+        <button type="button" class="btn btn-success" (click)="addComment()">发表评论</button>
+        <button type="button" class="btn btn-warning" (click)="showItem = false">取消</button>
+      </div>
+    </div>
+  </div>
+  <hr>
   <div class="row" *ngFor="let comment of comments">
-    <hr>
     <div class="col-md-12">
       <span>{{comment.username}}</span>
       <app-stars [rating]="comment.star"></app-stars>
       <span class="pull-right">{{comment.time}}</span>
       <p>{{comment.text}}</p>
     </div>
+    <hr>
   </div>
 </div>

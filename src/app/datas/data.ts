@@ -11,15 +11,15 @@ const Data: Product[] = [
 ];
 
 const Comments = [
-  new ProductComment(1, 1, 'csw', '2017-09-30', 4, '东西挺好的'),
-  new ProductComment(2, 1, 'lx', '2017-02-06', 3, '东西一般'),
-  new ProductComment(3, 2, 'ww', '2017-08-12', 1, '差评'),
-  new ProductComment(4, 1, 'mayun', '2017-08-24', 5, '好东西'),
-  new ProductComment(5, 3, 'mahuateng', '2017-05-10', 4, '还不错'),
-  new ProductComment(6, 1, 'wl', '2017-09-11', 2, '真的一般'),
-  new ProductComment(7, 5, 'zhy', '2017-02-05', 5, '给好评！'),
-  new ProductComment(8, 4, 'fj', '2017-07-04', 1, '垃圾东西'),
-  new ProductComment(9, 5, 'jj', '2017-11-11', 3, '给三分吧')
+  new ProductComment(1, 1, 'csw', '2017/09/30', 4, '东西挺好的'),
+  new ProductComment(2, 1, 'lx', '2017/02/06', 3, '东西一般'),
+  new ProductComment(3, 2, 'ww', '2017/08/12', 1, '差评'),
+  new ProductComment(4, 1, 'mayun', '2017/08/24', 5, '好东西'),
+  new ProductComment(5, 3, 'mahuateng', '2017/05/10', 4, '还不错'),
+  new ProductComment(6, 1, 'wl', '2017/09/11', 2, '真的一般'),
+  new ProductComment(7, 5, 'zhy', '2017/02/05', 5, '给好评！'),
+  new ProductComment(8, 4, 'fj', '2017/07/04', 1, '垃圾东西'),
+  new ProductComment(9, 5, 'jj', '2017/11/11', 3, '给三分吧')
 ];
 
 export { Data, Comments };

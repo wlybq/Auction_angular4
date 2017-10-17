@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from "../Objectes/Product";
 import {ProductService} from "../services/product.service";
 import {FormControl} from "@angular/forms";
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-product',
@@ -17,6 +18,7 @@ export class ProductComponent implements OnInit {
 
   constructor(private productService: ProductService) {
     this.searchText.valueChanges
+    .debounceTime(500)
     .subscribe(val => this.keword = val);
   }
 
